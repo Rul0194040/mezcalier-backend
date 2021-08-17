@@ -1,0 +1,53 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Raul de Jesus Sierra Vasconcelos <rsierravasconcelos@gmail.com>:
+	  insertions:    1181	(12%)
+	  deletions:     318	(5%)
+	  files:         60	(18%)
+	  commits:       24	(21%)
+	  lines changed: 1499	(9%)
+	  first commit:  Wed Feb 17 03:52:51 2021 -0600
+	  last commit:   Sat Feb 27 13:34:20 2021 -0600
+
+	 Erik Corona <ecorona@live.com>:
+	  insertions:    5721	(57%)
+	  deletions:     5184	(88%)
+	  files:         199	(59%)
+	  commits:       45	(39%)
+	  lines changed: 10905	(69%)
+	  first commit:  Wed Feb 17 17:16:52 2021 -0600
+	  last commit:   Thu Feb 25 09:29:04 2021 -0600
+
+	 Jorge Vicente Chavez Vega <jorge.vicente2108@gmail.com>:
+	  insertions:    622	(6%)
+	  deletions:     16	(0%)
+	  files:         32	(9%)
+	  commits:       22	(19%)
+	  lines changed: 638	(4%)
+	  first commit:  Wed Feb 17 14:38:49 2021 -0600
+	  last commit:   Fri Feb 26 20:52:09 2021 -0600
+
+	 Alejandro Cruz <superxero.x8@gmail.com>:
+	  insertions:    13	(0%)
+	  deletions:     13	(0%)
+	  files:         2	(1%)
+	  commits:       2	(2%)
+	  lines changed: 26	(0%)
+	  first commit:  Tue Feb 23 10:18:42 2021 -0600
+	  last commit:   Wed Feb 24 14:30:26 2021 -0600
+
+	 Esteban Sanchez <villegas09sanz@gmail.com>:
+	  insertions:    2482	(25%)
+	  deletions:     328	(6%)
+	  files:         45	(13%)
+	  commits:       22	(19%)
+	  lines changed: 2810	(18%)
+	  first commit:  Tue Feb 16 19:39:48 2021 -0600
+	  last commit:   Sun Feb 28 12:22:05 2021 -0600
+
+	total:
+	  insertions:    10019	(100%)
+	  deletions:     5859	(100%)
+	  files:         338	(100%)
+	  commits:       115	(100%)
+

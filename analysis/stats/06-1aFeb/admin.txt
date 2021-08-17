@@ -1,0 +1,35 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Erik Corona <ecorona@live.com>:
+	  insertions:    152	(1%)
+	  deletions:     1158	(5%)
+	  files:         16	(2%)
+	  commits:       3	(6%)
+	  lines changed: 1310	(3%)
+	  first commit:  Thu Feb 4 15:35:18 2021 -0600
+	  last commit:   Thu Feb 4 22:15:28 2021 -0600
+
+	 Zuriel Zarate <mdantez666@gmail.com>:
+	  insertions:    1125	(7%)
+	  deletions:     338	(2%)
+	  files:         129	(19%)
+	  commits:       13	(25%)
+	  lines changed: 1463	(4%)
+	  first commit:  Tue Feb 2 16:46:17 2021 -0600
+	  last commit:   Fri Feb 12 22:18:19 2021 -0600
+
+	 Alejandro Cruz <superxero.x8@gmail.com>:
+	  insertions:    15342	(92%)
+	  deletions:     20398	(93%)
+	  files:         549	(79%)
+	  commits:       37	(70%)
+	  lines changed: 35740	(93%)
+	  first commit:  Tue Feb 2 11:06:47 2021 -0600
+	  last commit:   Sat Feb 13 15:47:27 2021 -0600
+
+	total:
+	  insertions:    16619	(100%)
+	  deletions:     21894	(100%)
+	  files:         694	(100%)
+	  commits:       53	(100%)
+

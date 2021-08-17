@@ -1,0 +1,4 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	total:
+

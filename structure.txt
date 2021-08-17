@@ -1,0 +1,24 @@
+users.id
+   email
+   facebook
+   twitter
+
+trademark.id
+   status
+   active
+   usr_admin fk user_id
+
+codes.id
+   invoice
+   init
+   end
+   expiration_date
+   code_type fk codes_types
+
+codes_types.id
+   name
+
+
+
+
+

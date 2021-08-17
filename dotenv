@@ -1,0 +1,11 @@
+# settings minimos, requeridos por las pruebas y docker
+
+# deben coincidir con los del archivo orm.config-test.json 
+# para que las pruebas ejecutadas con docker-compose funcionen
+
+MYSQL_DB=mezcalier
+MYSQL_PORT=3306
+MYSQL_HOST=mysql-mezcalier-test
+MYSQL_USER=mezcalier
+MYSQL_PASSWORD=mysqlpasmezcaliersword
+MYSQL_ROOT_PASSWORD=mysqlrootpasmezcaliersword

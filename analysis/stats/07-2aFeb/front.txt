@@ -1,0 +1,53 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Luis Soto <root.luissoto@gmail.com>:
+	  insertions:    1649	(4%)
+	  deletions:     19973	(97%)
+	  files:         97	(41%)
+	  commits:       16	(40%)
+	  lines changed: 21622	(37%)
+	  first commit:  Tue Feb 16 19:29:57 2021 -0600
+	  last commit:   Wed Feb 24 21:21:59 2021 -0600
+
+	 Erik Corona <ecorona@live.com>:
+	  insertions:    34521	(91%)
+	  deletions:     3	(0%)
+	  files:         4	(2%)
+	  commits:       1	(2%)
+	  lines changed: 34524	(59%)
+	  first commit:  Sat Feb 20 15:02:37 2021 -0600
+	  last commit:   Sat Feb 20 15:02:37 2021 -0600
+
+	 Victor <cr4ul3rs@gmail.com>:
+	  insertions:    502	(1%)
+	  deletions:     129	(1%)
+	  files:         27	(11%)
+	  commits:       7	(18%)
+	  lines changed: 631	(1%)
+	  first commit:  Tue Feb 16 20:06:17 2021 -0600
+	  last commit:   Thu Feb 25 18:16:26 2021 -0600
+
+	 Erick <erick.ecp.oficial@gmail.com>:
+	  insertions:    1022	(3%)
+	  deletions:     473	(2%)
+	  files:         104	(44%)
+	  commits:       13	(32%)
+	  lines changed: 1495	(3%)
+	  first commit:  Tue Feb 16 20:21:22 2021 -0600
+	  last commit:   Thu Feb 25 20:49:28 2021 -0600
+
+	 Jorge Vicente Chavez Vega <jorge.vicente2108@gmail.com>:
+	  insertions:    170	(0%)
+	  deletions:     114	(1%)
+	  files:         4	(2%)
+	  commits:       3	(8%)
+	  lines changed: 284	(0%)
+	  first commit:  Wed Feb 24 15:29:09 2021 -0600
+	  last commit:   Fri Feb 26 21:51:30 2021 -0600
+
+	total:
+	  insertions:    37864	(100%)
+	  deletions:     20692	(100%)
+	  files:         236	(100%)
+	  commits:       40	(100%)
+

@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  mezcalier-app:
+    container_name: mezcalier-app
+    env_file:
+      - .env
+    image: registry.gitlab.com/mezcalier/mezcalier-back:latest #esta imagen ya contiene las dependencias
+    volumes:
+      - .:/nestjs
+      - /nestjs/node_modules
+    command: sh -c 'npm run build'

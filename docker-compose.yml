@@ -1,0 +1,45 @@
+version: '3.7'
+# si se hicieron nuevos npm install, ejecutar:
+# $ docker-compose up --build -V
+# -V se usa para que el volumen anonimo montado (node_modules)
+
+# IMPORTANTE!!! para usar docker compose, asegurate de cambiar la variable
+# MYSQL_HOST=mysql-mezcalier en el archivo ".env", al igual en orm.config.json
+# "host": "mysql-mezcalier",
+
+services:
+  mezcalier-app:
+    container_name: mezcalier-app
+    build:
+      context: .
+      target: development #solo hacer build de la parte de development
+    volumes:
+      - .:/nestjs
+      - /nestjs/node_modules #anonymous volume that will prevent the node_modules existing in the container to ever be overridden
+    ports:
+      - ${PORT}:${PORT}
+      - 9229:9229 #puerto para debug
+    command: sh -c '/bin/bash wait-for-mysql.sh && npm run mig:run && npm run start:debug:dc'
+    env_file:
+      - .env
+    networks: #red interna para los 3 containers
+      - mezcalierNetwork
+    depends_on:
+      - mysql-mezcalier
+
+  mysql-mezcalier:
+    container_name: mysql-mezcalier
+    image: mysql:5.7
+    env_file:
+      - .env
+    networks:
+      - mezcalierNetwork
+    ports:
+      - $MYSQL_PORT:3306
+    volumes:
+      - mezcalier_mysql:/var/lib/mysql
+
+networks:
+  mezcalierNetwork:
+volumes:
+  mezcalier_mysql:

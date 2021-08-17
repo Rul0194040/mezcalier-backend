@@ -1,0 +1,44 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Erik Corona <ecorona@live.com>:
+	  insertions:    27220	(86%)
+	  deletions:     27095	(95%)
+	  files:         725	(78%)
+	  commits:       117	(78%)
+	  lines changed: 54315	(90%)
+	  first commit:  Wed Dec 2 09:14:21 2020 -0600
+	  last commit:   Tue Dec 15 16:15:36 2020 -0600
+
+	 Raymundo Gomez <eraymundo.gomez@gmail.com>:
+	  insertions:    724	(2%)
+	  deletions:     391	(1%)
+	  files:         50	(5%)
+	  commits:       9	(6%)
+	  lines changed: 1115	(2%)
+	  first commit:  Fri Dec 4 15:32:47 2020 -0600
+	  last commit:   Fri Dec 11 11:33:00 2020 -0600
+
+	 jose <soldierbatg@gmail.com>:
+	  insertions:    52	(0%)
+	  deletions:     0	(0%)
+	  files:         2	(0%)
+	  commits:       1	(1%)
+	  lines changed: 52	(0%)
+	  first commit:  Tue Dec 8 19:46:02 2020 -0600
+	  last commit:   Tue Dec 8 19:46:02 2020 -0600
+
+	 Esteban Sanchez <villegas09sanz@gmail.com>:
+	  insertions:    3778	(12%)
+	  deletions:     1127	(4%)
+	  files:         147	(16%)
+	  commits:       23	(15%)
+	  lines changed: 4905	(8%)
+	  first commit:  Tue Dec 1 17:31:06 2020 -0600
+	  last commit:   Tue Dec 15 14:39:02 2020 -0600
+
+	total:
+	  insertions:    31774	(100%)
+	  deletions:     28613	(100%)
+	  files:         924	(100%)
+	  commits:       150	(100%)
+

@@ -1,0 +1,53 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Adaía Sharon <adaiasharon@gmail.com>:
+	  insertions:    238	(1%)
+	  deletions:     199	(0%)
+	  files:         51	(6%)
+	  commits:       5	(7%)
+	  lines changed: 437	(1%)
+	  first commit:  Tue Feb 16 18:10:40 2021 -0600
+	  last commit:   Fri Feb 26 14:11:04 2021 -0600
+
+	 Sharon <adaiasharon@gmail.com>:
+	  insertions:    62	(0%)
+	  deletions:     10	(0%)
+	  files:         9	(1%)
+	  commits:       3	(4%)
+	  lines changed: 72	(0%)
+	  first commit:  Tue Feb 23 17:10:29 2021 -0600
+	  last commit:   Tue Feb 23 20:27:19 2021 -0600
+
+	 Erik Corona <ecorona@live.com>:
+	  insertions:    18277	(64%)
+	  deletions:     125	(0%)
+	  files:         2	(0%)
+	  commits:       1	(1%)
+	  lines changed: 18402	(26%)
+	  first commit:  Sat Feb 20 15:08:53 2021 -0600
+	  last commit:   Sat Feb 20 15:08:53 2021 -0600
+
+	 Zuriel Zarate <mdantez666@gmail.com>:
+	  insertions:    1236	(4%)
+	  deletions:     528	(1%)
+	  files:         160	(19%)
+	  commits:       21	(28%)
+	  lines changed: 1764	(2%)
+	  first commit:  Tue Feb 16 19:37:27 2021 -0600
+	  last commit:   Fri Feb 26 14:15:04 2021 -0600
+
+	 Alejandro Cruz <superxero.x8@gmail.com>:
+	  insertions:    8605	(30%)
+	  deletions:     42526	(98%)
+	  files:         611	(73%)
+	  commits:       46	(61%)
+	  lines changed: 51131	(71%)
+	  first commit:  Tue Feb 16 20:17:41 2021 -0600
+	  last commit:   Sat Feb 27 13:51:31 2021 -0600
+
+	total:
+	  insertions:    28418	(100%)
+	  deletions:     43388	(100%)
+	  files:         833	(100%)
+	  commits:       76	(100%)
+

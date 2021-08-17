@@ -1,0 +1,71 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Raul de Jesus Sierra Vasconcelos <rsierravasconcelos@gmail.com>:
+	  insertions:    508	(1%)
+	  deletions:     53	(0%)
+	  files:         22	(7%)
+	  commits:       9	(7%)
+	  lines changed: 561	(1%)
+	  first commit:  Tue Feb 9 08:58:33 2021 -0600
+	  last commit:   Fri Feb 12 16:32:40 2021 -0600
+
+	 Jorge Vicente Chávez Vega <jorge.vicente2108@gmail.com>:
+	  insertions:    557	(1%)
+	  deletions:     18959	(47%)
+	  files:         15	(5%)
+	  commits:       7	(5%)
+	  lines changed: 19516	(23%)
+	  first commit:  Wed Feb 3 17:25:26 2021 -0600
+	  last commit:   Tue Feb 9 20:19:47 2021 -0600
+
+	 Erik Corona <ecorona@live.com>:
+	  insertions:    6332	(14%)
+	  deletions:     20798	(52%)
+	  files:         242	(74%)
+	  commits:       93	(72%)
+	  lines changed: 27130	(32%)
+	  first commit:  Tue Feb 2 10:52:24 2021 -0600
+	  last commit:   Mon Feb 15 16:10:31 2021 -0600
+
+	 Zuriel Zarate <mdantez666@gmail.com>:
+	  insertions:    3	(0%)
+	  deletions:     2	(0%)
+	  files:         2	(1%)
+	  commits:       2	(2%)
+	  lines changed: 5	(0%)
+	  first commit:  Thu Feb 11 13:05:02 2021 -0600
+	  last commit:   Thu Feb 11 15:40:50 2021 -0600
+
+	 Jorge Vicente Chavez Vega <jorge.vicente2108@gmail.com>:
+	  insertions:    37633	(83%)
+	  deletions:     168	(0%)
+	  files:         30	(9%)
+	  commits:       12	(9%)
+	  lines changed: 37801	(44%)
+	  first commit:  Tue Feb 2 14:59:37 2021 -0600
+	  last commit:   Sat Feb 13 18:05:45 2021 -0600
+
+	 Alejandro Cruz <superxero.x8@gmail.com>:
+	  insertions:    14	(0%)
+	  deletions:     13	(0%)
+	  files:         6	(2%)
+	  commits:       3	(2%)
+	  lines changed: 27	(0%)
+	  first commit:  Tue Feb 2 10:11:54 2021 -0600
+	  last commit:   Tue Feb 2 10:30:55 2021 -0600
+
+	 Esteban Sanchez <villegas09sanz@gmail.com>:
+	  insertions:    116	(0%)
+	  deletions:     40	(0%)
+	  files:         11	(3%)
+	  commits:       4	(3%)
+	  lines changed: 156	(0%)
+	  first commit:  Wed Feb 3 19:37:24 2021 -0600
+	  last commit:   Sun Feb 14 21:46:29 2021 -0600
+
+	total:
+	  insertions:    45163	(100%)
+	  deletions:     40033	(100%)
+	  files:         328	(100%)
+	  commits:       130	(100%)
+

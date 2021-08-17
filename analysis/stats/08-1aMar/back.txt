@@ -1,0 +1,26 @@
+[1m[31mContribution stats (by author) on the current branch:(B[m
+
+	 Jorge Vicente Chavez Vega <jorge.vicente2108@gmail.com>:
+	  insertions:    145	(60%)
+	  deletions:     0	(0%)
+	  files:         8	(36%)
+	  commits:       4	(67%)
+	  lines changed: 145	(46%)
+	  first commit:  Mon Mar 1 17:36:51 2021 -0600
+	  last commit:   Thu Mar 4 00:54:42 2021 -0600
+
+	 Esteban Sanchez <villegas09sanz@gmail.com>:
+	  insertions:    97	(40%)
+	  deletions:     76	(100%)
+	  files:         14	(64%)
+	  commits:       2	(33%)
+	  lines changed: 173	(54%)
+	  first commit:  Mon Mar 1 22:55:55 2021 -0600
+	  last commit:   Mon Mar 1 23:30:35 2021 -0600
+
+	total:
+	  insertions:    242	(100%)
+	  deletions:     76	(100%)
+	  files:         22	(100%)
+	  commits:       6	(100%)
+

@@ -1,0 +1,281 @@
+/* tslint:disable */
+/* eslint-disable */
+import { PaginationPrimeNgHouses } from './../src/common/dto/pagination/paginationPrimeHouses.dto';
+import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
+import * as request from 'supertest';
+import { DeleteResult, UpdateResult } from 'typeorm';
+import { AppModule } from '@mezcal/app.module';
+import { HouseDTO } from '@mezcal/modules/browser/houses/dtos/house.dto';
+import { ProcesseDTO } from '@mezcal/modules/admin/catalogs/processes/model/processe.dto';
+import { FlavorDTO } from '@mezcal/modules/admin/catalogs/flavors/model/flavor.dto';
+import { RegionDTO } from '@mezcal/modules/admin/catalogs/regions/model/region.dto';
+import { createBrandDTO } from '@mezcal/modules/owner/brands/createBrand.dto';
+import { HouseEntity } from '@mezcal/modules/house.entity';
+import { BrandEntity } from '@mezcal/modules/brand.entity';
+import { ProductEntity } from '@mezcal/modules/product.entity';
+import { createProductDTO } from '@mezcal/modules/owner/products/dtos/createProduct.dto';
+import { createUserDTO } from '@mezcal/modules/admin/users/model/createUser.dto';
+import { ProcesseEntity } from '@mezcal/modules/admin/catalogs/processes/model/processe.entity';
+import { FlavorEntity } from '@mezcal/modules/admin/catalogs/flavors/model/flavor.entity';
+import { RegionEntity } from '@mezcal/modules/admin/catalogs/regions/model/region.entity';
+import { UserEntity } from '@mezcal/modules/admin/users/model/user.entity';
+import { BrandDTO } from '@mezcal/modules/owner/brands/brand.dto';
+import { AgaveDTO } from '@mezcal/modules/admin/catalogs/agaves/model/agave.dto';
+import { AgaveEntity } from '@mezcal/modules/admin/catalogs/agaves/model/agave.entity';
+import { ShopEntity } from '@mezcal/modules/owner/shops/model/shop.entity';
+import { ShopDTO } from '@mezcal/modules/owner/shops/model/shop.dto';
+import { MezcalTypeDTO } from '@mezcal/modules/admin/catalogs/mezcalTypes/model/mezcalType.dto';
+import { MezcalTypeEntity } from '@mezcal/modules/admin/catalogs/mezcalTypes/model/mezcalType.entity';
+import { LimitesHouseDTO } from '@mezcal/modules/admin/houses/limitesHouse.dto';
+import { ImageEntity } from '@mezcal/common/images/model/image.entity';
+import * as sharp from 'sharp';
+import {
+  PaginationPrimeNG,
+  PaginationPrimeNgResult,
+} from '@mezcal/common/dto/pagination/paginationprimeng.dto';
+import { RateDTO } from '@mezcal/modules/browser/products/dtos/rate.dto';
+import { ProductCommentDTO } from '@mezcal/modules/browser/products/dtos/productComment.dto';
+import { CompareProductsDTO } from '@mezcal/modules/browser/products/dtos/compareProducts.dto';
+import { HouseCommentDTO } from '@mezcal/modules/browser/houses/dtos/houseComment.dto';
+import { HouseCommentsEntity } from '@mezcal/modules/browser/houses/models/houseComments.entity';
+import { BrandCommentsEntity } from '@mezcal/modules/browser/brands/brandComments.entity';
+import { ProductTastingDTO } from '@mezcal/modules/browser/products/dtos/productTasting.dto';
+import { ProductTastingsEntity } from '@mezcal/modules/browser/models/productTastings.entity';
+import { ProductCommentsEntity } from '@mezcal/modules/browser/models/productComments.entity';
+import { ProductFavoritesEntity } from '@mezcal/modules/browser/models/productFavorites.entity';
+import { SubscriptionDTO } from '@mezcal/modules/browser/suscription/dto/suscription.dto';
+import { ProfileTypes } from '@mezcal/modules/admin/profiles/model/profiles.enum';
+import { RegTypes } from '@mezcal/common/enum/regTypes.enum';
+import { TypeORMExceptionFilter } from '@mezcal/common/filters/typeorm-exceptions.filter';
+import { HttpExceptionFilter } from '@mezcal/common/filters/http-exceptions.filter';
+import { MasterDTO } from '@mezcal/modules/owner/masters/model/master.dto';
+import { MasterEntity } from '@mezcal/modules/owner/masters/model/master.entity';
+import { LoginIdentityDTO } from '@mezcal/auth/dto/loginIdentity.dto';
+import { PaginationPrimeNgProducts } from '@mezcal/common/dto/pagination/paginationPrimeProducts.dto';
+import { SortTypes } from '@mezcal/common/enum/sortTypes.enum';
+import { PaginationPrimeNgBrands } from '../src/common/dto/pagination/paginationPrimeBrands.dto';
+import { BrandsSortTypes } from '@mezcal/common/enum/brandsSortTypes.enum';
+import * as dotenv from 'dotenv';
+dotenv.config();
+/**
+ * Pruebas generales de la aplicacion, aqui se levanta toda la
+ * app para ejecutarlas.
+ */
+describe('Pruebas Generales', () => {
+  let app: INestApplication;
+
+  /**
+   * Inicializacion
+   */
+  beforeAll(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile();
+
+    app = moduleFixture.createNestApplication();
+    app.useGlobalPipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    );
+    app.useGlobalFilters(
+      new TypeORMExceptionFilter(),
+      new HttpExceptionFilter(),
+    );
+    await app.init();
+    return;
+  });
+  
+  const super_access_token = '';
+  let admin_access_token = '';
+  let admin2_access_token = '';
+  let owner_access_token = '';
+  let owner_house2_access_token = '';
+  let owner2_access_token = '';
+  //admin que sera creado por el superadmin
+  const newAdminUser: createUserDTO = {
+    firstName: 'Admin',
+    lastName: 'User',
+    email: 'admin@dominio.com',
+    password: 'password',
+  };
+  let createdAdminUser: UserEntity;
+
+  const newOwner2: createUserDTO = {
+    firstName: 'Owner',
+    lastName: 'Secundario',
+    email: 'owner2@dominio.com',
+    password: 'password',
+  };
+  let createdOwner2: UserEntity;
+  let ownerRules: string[];
+  //let ownerHouse2Rules: string[];
+  let adminRules: string[];
+
+  const newAdminUser2: createUserDTO = {
+    firstName: 'Admin2',
+    lastName: 'User2',
+    email: 'admin2@dominio.com',
+    password: 'password',
+  };
+  let createdAdminUser2: UserEntity;
+
+  const newProc: ProcesseDTO = {
+    nombre: 'Proceso Ancestral',
+    descripcion: 'Proceso Ancestral Descripcion',
+    html: '<div><p>hola mundo</p></div>',
+  };
+  let createdProc: ProcesseEntity;
+  const newProc2: ProcesseDTO = {
+    nombre: 'Proceso Tradicional',
+    descripcion: 'Proceso Tradicional Descripcion',
+    html: '<div><p>hola mundo</p></div>',
+  };
+  let createdProc2: ProcesseEntity;
+
+  const newFlavor: FlavorDTO = {
+    nombre: 'Seco',
+    html: '<div><p>Hello World</p></div>',
+  };
+  let createdFlavor: FlavorEntity;
+  const newFlavor2: FlavorDTO = {
+    nombre: 'A madera',
+    html: '<div><p>Hello World</p></div>',
+  };
+  let createdFlavor2: FlavorEntity;
+
+  const newAgave: AgaveDTO = {
+    nombre: 'Mexicano',
+    descripcion: 'Agave Mexicano',
+  };
+  let createdAgave: AgaveEntity;
+
+  const newAgave2: AgaveDTO = {
+    nombre: 'Espadín',
+    descripcion: 'Agave Espadín',
+  };
+
+  let createdAgave2: AgaveEntity;
+
+  const newMezcalType: MezcalTypeDTO = {
+    nombre: 'Ensamble',
+    descripcion: 'Formado de varios mezcales de variados tipos',
+  };
+  const newMezcalType2: MezcalTypeDTO = {
+    nombre: 'Compuesto',
+    descripcion: 'Formado de varios mezcales de variados tipos',
+  };
+
+  let createdMezcalType: MezcalTypeEntity;
+  let createdMezcalType2: MezcalTypeEntity;
+
+  const newRegion: RegionDTO = {
+    nombre: 'Mixteca',
+    descripcion: 'Descripcion breve',
+    html: '<div><p>Hello World</p></div>',
+  };
+  let createdRegion: RegionEntity;
+  const newRegion2: RegionDTO = {
+    nombre: 'Valles Centrales',
+    descripcion: 'Descripcion breve',
+    html: '<div><p>Hello World</p></div>',
+  };
+  let createdRegion2: RegionEntity;
+  const newRegion3: RegionDTO = {
+    nombre: 'Sierra sur',
+    descripcion: 'Descripcion breve',
+    html: '<div><p>Hello World</p></div>',
+  };
+  let createdRegion3: RegionEntity;
+  // HOUSE 1 ---------------------------------------------
+  //casa que se suscribe sola
+  
+  // HOUSE 2 ------------------------------------------
+  //casa2 que se suscribe sola
+  
+  // HOUSE 2 FIN ----------------------------------------
+
+  
+  
+
+  
+
+  let createdHouseImage: ImageEntity;
+  let createdBrandImage: ImageEntity;
+  let createdProductImage: ImageEntity;
+  let createdLogoImage: ImageEntity;
+
+  
+
+  /**
+    ######     ###     ######     ###     ######  
+   ##    ##   ## ##   ##    ##   ## ##   ##    ## 
+   ##        ##   ##  ##        ##   ##  ##       
+   ##       ##     ##  ######  ##     ##  ######  
+   ##       #########       ## #########       ## 
+   ##    ## ##     ## ##    ## ##     ## ##    ## 
+    ######  ##     ##  ######  ##     ##  ######  
+   */
+  describe('Houses', () => {
+   
+
+    
+
+    
+
+    
+
+    
+    
+
+  /*
+   ########  ########     ###    ##    ## ########   ######  
+   ##     ## ##     ##   ## ##   ###   ## ##     ## ##    ## 
+   ##     ## ##     ##  ##   ##  ####  ## ##     ## ##       
+   ########  ########  ##     ## ## ## ## ##     ##  ######  
+   ##     ## ##   ##   ######### ##  #### ##     ##       ## 
+   ##     ## ##    ##  ##     ## ##   ### ##     ## ##    ## 
+   ########  ##     ## ##     ## ##    ## ########   ######  
+  */
+  
+  /*
+  ##     ##    ###     ######  ######## ######## ########   ######  
+  ###   ###   ## ##   ##    ##    ##    ##       ##     ## ##    ## 
+  #### ####  ##   ##  ##          ##    ##       ##     ## ##       
+  ## ### ## ##     ##  ######     ##    ######   ########   ######  
+  ##     ## #########       ##    ##    ##       ##   ##         ## 
+  ##     ## ##     ## ##    ##    ##    ##       ##    ##  ##    ## 
+  ##     ## ##     ##  ######     ##    ######## ##     ##  ######  
+  */
+  
+
+  /*
+   ########  ########   #######  ########  ##     ##  ######  ########  #######   ######  
+   ##     ## ##     ## ##     ## ##     ## ##     ## ##    ##    ##    ##     ## ##    ## 
+   ##     ## ##     ## ##     ## ##     ## ##     ## ##          ##    ##     ## ##       
+   ########  ########  ##     ## ##     ## ##     ## ##          ##    ##     ##  ######  
+   ##        ##   ##   ##     ## ##     ## ##     ## ##          ##    ##     ##       ## 
+   ##        ##    ##  ##     ## ##     ## ##     ## ##    ##    ##    ##     ## ##    ## 
+   ##        ##     ##  #######  ########   #######   ######     ##     #######   ######  
+  */
+  
+
+  
+
+  /*
+    ######  ##       ########    ###    ##    ## ##     ## ########  
+   ##    ## ##       ##         ## ##   ###   ## ##     ## ##     ## 
+   ##       ##       ##        ##   ##  ####  ## ##     ## ##     ## 
+   ##       ##       ######   ##     ## ## ## ## ##     ## ########  
+   ##       ##       ##       ######### ##  #### ##     ## ##        
+   ##    ## ##       ##       ##     ## ##   ### ##     ## ##        
+    ######  ######## ######## ##     ## ##    ##  ###o####  ##        
+  */
+  
+
+  afterAll(async (done) => {
+    await app.close();
+    return done();
+  });
+});

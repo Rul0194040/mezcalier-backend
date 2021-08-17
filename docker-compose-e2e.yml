@@ -1,0 +1,41 @@
+version: '3.7'
+# si se hicieron nuevos npm install, ejecutar:
+# $ docker-compose up --build -V
+# -V se usa para que el volumen anonimo montado (node_modules)
+
+# IMPORTANTE!!! para usar docker compose, asegurate de cambiar la variable
+# MYSQL_HOST=mysql-mezcalier en el archivo ".env", al igual en orm.config.json
+# "host": "mysql-mezcalier",
+
+services:
+  mezcalier-app:
+    container_name: mezcalier-app
+    env_file:
+      - .env
+    # vamos a usar la imagen del registro, lo que significa que cada que haya cambios en las dependencias
+    # se debera actualizar la imagen ya que van incluidas en esta
+    image: registry.gitlab.com/mezcalier/mezcalier-back:latest
+    volumes:
+      - .:/nestjs #aqui mapeamos el codigo actual con la imagen del repositorio
+      - /nestjs/node_modules
+    command: sh -c '/bin/bash wait-for-mysql.sh && npm run mig:run && npm run test:cov'
+    networks: #red interna para los 3 containers
+      - mezcalierNetwork
+    depends_on:
+      - mysql-mezcalier-test
+
+  mysql-mezcalier-test:
+    container_name: mysql-mezcalier-test
+    image: mysql:5.7
+    env_file:
+      - .env
+    environment:
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_DATABASE: ${MYSQL_DB}
+    networks:
+      - mezcalierNetwork
+
+networks:
+  mezcalierNetwork:

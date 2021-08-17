@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  mezcalier-app:
+    container_name: mezcalier-app
+    env_file:
+      - .env
+    image: registry.gitlab.com/mezcalier/mezcalier-back:latest
+    volumes:
+      - .:/nestjs #mapeamos el codigo actual a las dependencias de la imagen
+      - /nestjs/node_modules
+    command: sh -c 'npm run lint && npm run doc:cov'
